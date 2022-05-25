@@ -1,0 +1,36 @@
+.header{
+    height: 60px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-left:50px ;
+    
+    /* background-color: #419a59; */
+    background-color: #e1eedd;
+    /* background-color: #2b6777; */
+    /* background-color: #52ab98; */
+    /* background-color: #416a59; */
+}
+.header-nav{
+    text-decoration: none;
+    margin-right: 20px;
+    color: black;
+    padding-top: 10px;
+    font-weight: 700;
+    font-size: large;
+}
+.header-nav{
+    color: white;
+    
+
+}
+.signOut-button{
+    background-color: deepskyblue;
+}
+.signOut-button:hover{
+    background-color: lightcoral;
+}
+
+/* Dsiplaying user name with style */
+.users-name{
+    color: rgb(156, 5, 111)
+}

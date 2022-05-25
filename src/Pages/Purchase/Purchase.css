@@ -1,0 +1,43 @@
+.product-for-update{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5px;  
+}
+
+.update-product{
+    border: 1px solid deepskyblue;
+    border-radius: 10px;
+}
+.update-product-child{
+    /* color: aqua; */
+}
+.update-quantity-btn{
+    background-color: deepskyblue;
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px 35px;
+    font-weight: 600;
+}
+.update-quantity-btn:hover{
+    background-color: goldenrod;
+}
+
+.decrease-btn{
+    background-color: green;
+    padding: 10px 20px;
+    border: 0px;
+    border-radius: 7px;
+    color: white;
+    font-weight: 600;
+
+}
+.deilivered-btn:hover{
+    background-color: rgb(236, 97, 97);
+    color: black;
+    font-weight: 600;
+}
+.update-product-form{
+    box-shadow: 1px 1px 17px rgba(128, 128, 128, 0.26);
+    border-radius: 7px;
+    padding: 20px;
+}

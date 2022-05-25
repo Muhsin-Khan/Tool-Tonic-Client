@@ -1,0 +1,22 @@
+.seperator-line{
+    background-color: #e1eedd;
+}
+.manage-inventories-button{
+    background-color: goldenrod;
+    border-radius: 7px;
+    font-size: large;
+    font-weight: 700;
+    border-radius: 5px;
+    
+    border: 0;
+    
+    height: 60px;
+    color: white;
+    
+    padding: 10px 70px;
+    margin-bottom: 30px;
+}
+
+.manage-inventories-button:hover{
+    background-color: deepskyblue;
+}
