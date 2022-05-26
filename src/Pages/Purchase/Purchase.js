@@ -72,11 +72,11 @@ const Purchase = () => {
         {/* informatiosn side or left side */}
 
         <div className="ms-4 mt-3 mb-3 pe-4 w-50">
-          <h4>{product.name}</h4>
+          <h4 className="text-lg font-bold">{product.name}</h4>
           <img className="w-50 mt-2 ps-2 mb-3" src={product.img} alt="" />
-          <h5>Minimum Order Quantity: {product.MOQ}</h5>
-          <h5>Available Quantity: {product.AQ}</h5>
-          <h4>Price: ${product.price}<small className="small"> /Unit</small> </h4>
+          <h5 className="font-semibold mb-2">Minimum Order Quantity: {product.MOQ}</h5>
+          <h5 className="font-semibold mb-2">Available Quantity: {product.AQ}</h5>
+          <h4 className="text-xl font-semibold my-3">Price: ${product.price}<small className="small"> /Unit</small> </h4>
           <h6>product Id: {id}</h6>
         </div>
 
@@ -95,14 +95,14 @@ const Purchase = () => {
             <form className="" onSubmit={handleUpdateQuantity}>
               <h5 className="mb-3">Write your quantity</h5>
               <input
-                className="mb-2 mt-2"
+                className="mb-2 mt-2 input input-bordered"
                 placeholder="Quantity"
                 type="number"
                 name="number"
               />
               <br />
               <input
-                className="mb-2 mt-2 update-quantity-btn"
+                className="mb-2 mt-2 ml-1 px-5 update-quantity-btn"
                 type="submit"
                 value={"Set Quantity"}
               />

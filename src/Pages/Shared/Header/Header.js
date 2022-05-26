@@ -20,7 +20,7 @@ const Header = () => {
     <Navbar className="header" collapseOnSelect expand="lg" sticky="top">
         <Container className="header-nav">
           <Navbar.Brand as={Link} to="/">
-            <img src={logo} height={30} alt="" />
+            <img src={logo} height={30} alt="" className="h-8 d-flex contents-center items-center" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -28,13 +28,13 @@ const Header = () => {
               <Nav.Link className="" as={Link} to="home">
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="inventoryItems">
-                Inventory Items
+              <Nav.Link as={Link} to="allproducts">
+                All Tools
               </Nav.Link>
               {user && (
                 <>
-                  <Nav.Link as={Link} to="addItems">
-                    Add Items
+                  <Nav.Link as={Link} to="dashboard">
+                    Dashboard
                   </Nav.Link>
                   <Nav.Link as={Link} to="manageInventory">
                     Manage Inventory
@@ -51,7 +51,7 @@ const Header = () => {
 
               
             </Nav>
-            <Nav>
+            <Nav className="d-flex justify-content-center align-items-center">
               <Nav.Link as={Link} to="myportfolio">
                 My Portfolio
               </Nav.Link>

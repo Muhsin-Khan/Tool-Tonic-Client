@@ -1,6 +1,6 @@
 .header{
     height: 60px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
     padding-top: 10px;
     padding-left:50px ;
     
@@ -25,6 +25,7 @@
 }
 .signOut-button{
     background-color: deepskyblue;
+    padding: 0px 20px;
 }
 .signOut-button:hover{
     background-color: lightcoral;

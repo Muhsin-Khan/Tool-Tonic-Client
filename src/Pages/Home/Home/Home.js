@@ -1,9 +1,9 @@
 import React from 'react'
 import "./Home.css";
-import Banner from './Banner/Banner'
-import ExtraOne from './ExtraOne/ExtraOne';
-import ExtraTwo from './ExtraTwo/ExtraTwo';
-import Products from '../Products/Products';
+import Banner from '../Banner/Banner'
+import ExtraOne from '../ExtraOne/ExtraOne';
+import ExtraTwo from '../ExtraTwo/ExtraTwo';
+import Products from '../../Products/Products';
 // import Header from './Header/Header'
 
 const Home = () => {

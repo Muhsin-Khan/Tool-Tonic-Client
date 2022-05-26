@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from "react-firebase-hooks/auth";
 import "./Signup.css";
-// import auth from "../../firebase.init";
+
 import SocialLogin from "../SocialLogin/SocialLogin";
-// import Loading from "../../Shared/Loading/Loading";
+
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 
@@ -12,7 +12,8 @@ const SignUp = () => {
   
   const [createUserWithEmailAndPassword, user, loading] =
     useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});
-    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+   
+    const [updateProfile, updating, error] = useUpdateProfile(auth);
 
     
 
@@ -30,13 +31,7 @@ const SignUp = () => {
     navigate("/home");
   }
 
-  // const [name, setName] = useState('');
-  //   const [email, setEmail] = useState('');
-  //   const [password, setPassword] = useState('');
-
-  //   setName(Event.target.value)
-  //   setEmail(Event.target.value)
-  //   setPassword(Event.target.value)
+  
 
   const handleSignup = (event) => {
     event.preventDefault();
@@ -45,10 +40,13 @@ const SignUp = () => {
     const password = event.target.password.value;
 
     createUserWithEmailAndPassword(email, password);
+    updateProfile(name);
+
     console.log(name, email, password)
     .then(result =>{
       const user = result.user;
-      console.log('getting...', user)
+
+      // console.log('getting...', user)
       
     })
     
@@ -60,6 +58,8 @@ const SignUp = () => {
   return (
     <div className="signup-form body">
       <h3 className="mt-4 mb-3" style={{ textAlign: "center" }}>Sign Up</h3>
+      
+      {/* Sigun up form starts..... */}
       <form onSubmit={handleSignup}>
         <input type="text" name="name"  placeholder="Your Name" />
         <input type="email" name="email"  placeholder="Email Address" />
@@ -70,6 +70,10 @@ const SignUp = () => {
           value="Sign Up"
         />
       </form>
+      {/* Sigun up form ends..... */}
+
+      
+      {/* Login link For toggling to login page.......  */}
       <p>
         Already have an account?{" "}
         <Link
@@ -80,6 +84,8 @@ const SignUp = () => {
           Please Login
         </Link>
       </p>
+
+      {/* Social Login button........to login by social account (Google) */}
       <SocialLogin></SocialLogin>
     </div>
   );

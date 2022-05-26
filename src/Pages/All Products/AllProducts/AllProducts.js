@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Product from "../Product/Product";
-import "./Products.css";
+import Product from "../AllProduct/AllProduct";
+import "./AllProducts.css";
 
-const Products = () => {
+const AllProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/product")
@@ -11,10 +11,10 @@ const Products = () => {
   }, []);
   return (
     <div className="container" >
-      <h1 className="products-title pt-4 pb-1 mt-3 mb-4  text-4xl font-semibold "> Our Tools </h1>
+      <h1 className="products-title pt-4 pb-1 mt-3 mb-4 text-4xl font-semibold"> All Tools </h1>
       <div className="products">
       {
-        products.slice(0,4).map(p => (
+        products.map(p => (
         
           <Product
           key={p._id}
@@ -28,4 +28,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default AllProducts;

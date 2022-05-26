@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Product.css";
+import "./AllProduct.css";
 
-const Product = ( props ) => {
+const AllProduct = ( props ) => {
   const { _id, img, name, description, MOQ, price, AQ } = props.p;
   console.log(props.p)
   return (
@@ -10,7 +10,7 @@ const Product = ( props ) => {
       <div className="product">
         <img className="w-100" src={img} alt="" />
         <div className="product-info">
-          <h4 className="text-lg font-bold my-3">{name}</h4>
+          <h4 className="text-lg my-3 font-bold">{name}</h4>
           <p>Description: {description}</p>
           <h6>Minimum Oreder Quantity: {MOQ} </h6>
           <h6>Available Quantity: {AQ} </h6>
@@ -28,4 +28,4 @@ const Product = ( props ) => {
   );
 };
 
-export default Product;
+export default AllProduct;
