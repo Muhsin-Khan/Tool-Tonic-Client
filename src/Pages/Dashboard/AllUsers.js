@@ -21,7 +21,7 @@ const AllUsers = () => {
       <tr>
         <th>Index</th>
         <th>User's Email</th>
-        <th>User's ID</th>
+        
         
       </tr>
     </thead>
