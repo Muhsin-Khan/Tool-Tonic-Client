@@ -7,6 +7,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
+import useToken from "../../../Hooks/useToken";
 
 const SignUp = () => {
   
@@ -15,7 +16,7 @@ const SignUp = () => {
    
     const [updateProfile, updating, error] = useUpdateProfile(auth);
 
-    
+  const [token] = useToken(user);
 
   const navigate = useNavigate();
 

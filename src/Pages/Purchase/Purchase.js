@@ -78,23 +78,7 @@ const Purchase = () => {
     })
 
     
-    // console.log("checking...", quantityNumber);
-    // const quaNtity = parseInt(product.quantity) + parseInt(quantityNumber);
-    // const newQuantity = { quaNtity };
-    // console.log(newQuantity);
-
-    // fetch(`http://localhost:5000/product/${id}`, {
-    //   method: "PUT",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(newQuantity),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setProduct(data);
-    //     console.log("checking-2", newQuantity);
-    //   });
+    
     event.target.reset();
   };
 
@@ -116,13 +100,7 @@ const Purchase = () => {
 
         <div className="me-4 mt-3 pt-5 justify-content-center align-items-center ">
           <br />
-          {/* <button
-            className="decrease-btn mb-5"
-            onClick={handleDecreaseQuantity}
-          >
-            Decrease Product Quantity
-          </button>
-          <br /> */}
+          
           <div className="update-product-form mb-5">
             <form className="" onSubmit={handlePurchaseOrder}>
               <h5 className="mb-3 font-bold text-center text-green-700">Input Order Details</h5>

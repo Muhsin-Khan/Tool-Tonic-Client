@@ -28,6 +28,9 @@ const Dashboard = () => {
           <li>
             <Link to="/dashboard/addareview">Add a Review</Link>
           </li>
+          <li>
+            <Link to="/dashboard/allusers">All Users</Link>
+          </li>
         </ul>
       </div>
     </div>
