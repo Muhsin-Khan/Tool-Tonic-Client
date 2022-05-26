@@ -15,6 +15,8 @@ import Purchase from "./Pages/Purchase/Purchase";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Header from "./Pages/Shared/Header/Header";
 import RequireAuth from "./Pages/Shared/RequireAuth/RequireAuth";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        {/* Nestde Routes */}
         <Route
           path="/dashboard"
           element={
@@ -55,6 +58,7 @@ function App() {
         <Route path="/*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }

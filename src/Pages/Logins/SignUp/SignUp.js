@@ -42,17 +42,18 @@ const SignUp = () => {
     createUserWithEmailAndPassword(email, password);
     updateProfile(name);
 
-    console.log(name, email, password)
-    .then(result =>{
-      const user = result.user;
+    // console.log(name, email, password)
 
-      // console.log('getting...', user)
+    // .then(result =>{
+    //   const user = result.user;
+
+    //   // console.log('getting...', user)
       
-    })
+    // })
     
-    .catch(error=>{
-      console.error(error)
-    })
+    // .catch(error=>{
+    //   console.error(error)
+    // })
     
   };
   return (

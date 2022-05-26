@@ -1,12 +1,12 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
     <div class="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content ">
-      <h1 className="text-3xl">This is the dashboard</h1>
+      <h1 className="text-3xl font-semibold text-center mt-3">Dashboard</h1>
       <Outlet />
       
         {/* <!-- Page content here --> */}
@@ -22,10 +22,11 @@ const Dashboard = () => {
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
           {/* <!-- Sidebar content here --> */}
           <li>
-            <a>Sidebar Item 1</a>
+            <Link to="/dashboard">My Dashboard</Link>   
           </li>
+          
           <li>
-            <a>Sidebar Item 2</a>
+            <Link to="/dashboard/addareview">Add a Review</Link>
           </li>
         </ul>
       </div>
