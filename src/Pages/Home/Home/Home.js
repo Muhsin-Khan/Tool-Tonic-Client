@@ -4,6 +4,7 @@ import Banner from '../Banner/Banner'
 import ExtraOne from '../ExtraOne/ExtraOne';
 import ExtraTwo from '../ExtraTwo/ExtraTwo';
 import Products from '../../Products/Products';
+import BusinessSummary from './BusinessSummary/BusinessSummary';
 // import Header from './Header/Header'
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
         <Banner></Banner>
         
         <Products></Products>
+        <BusinessSummary></BusinessSummary>
         {/* Seperator Line */}
         <div className="d-flex align-items-center container">
         <div style={{ height: "1px" }} className="seperator-line w-100 mt-5"></div>
