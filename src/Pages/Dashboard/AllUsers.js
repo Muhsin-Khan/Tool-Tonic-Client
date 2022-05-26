@@ -20,7 +20,7 @@ const AllUsers = () => {
     <thead>
       <tr>
         <th>Index</th>
-        <th>User's Email</th>
+        <th>User's Email Address</th>
         
         
       </tr>
