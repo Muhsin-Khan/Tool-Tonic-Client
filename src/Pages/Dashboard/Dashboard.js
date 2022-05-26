@@ -6,7 +6,7 @@ const Dashboard = () => {
     <div class="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content ">
-      <h1 className="text-3xl font-semibold text-center mt-3">Dashboard</h1>
+      <h1 className="text-3xl font-semibold text-center mt-3 text-green-600">Dashboard</h1>
       <Outlet />
       
         {/* <!-- Page content here --> */}

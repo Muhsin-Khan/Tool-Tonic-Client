@@ -16,7 +16,7 @@ const AllUsers = () => {
       <h1 className='text-lg text-center my-4 font-bold'>All users: {users.length}</h1>
       <div class="overflow-x-auto">
   <table class="table w-full">
-    {/* <!-- head --> */}
+    
     <thead>
       <tr>
         <th>Index</th>
