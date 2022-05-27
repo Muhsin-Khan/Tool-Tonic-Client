@@ -36,9 +36,9 @@ const MyOrders = () => {
             {orders.map((o, index) => (
               <tr>
                 <th>{index + 1}</th>
-                <td>{o.productName}</td>
-                <td>{o.productId}</td>
-                <td>{o.productQuantity}</td>
+                <td className="text-xs font-bold">{o.productName}</td>
+                <td className="text-xs">{o.productId}</td>
+                <td className=" text-center text-bold ">{o.productQuantity}</td>
                 <td>{o.customerEmail}</td>
               </tr>
             ))}
