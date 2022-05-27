@@ -3,7 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import auth from "../../firebase.init";
 import "./Purchase.css";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const Purchase = () => {
   const { id } = useParams();
@@ -11,7 +11,7 @@ const Purchase = () => {
   const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://lit-brook-67654.herokuapp.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
@@ -25,7 +25,7 @@ const Purchase = () => {
     }
     const newQuantity = { quaNtity };
 
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://lit-brook-67654.herokuapp.com/product/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -42,43 +42,41 @@ const Purchase = () => {
   const handlePurchaseOrder = (event) => {
     event.preventDefault();
     console.log("button clicked");
-    
 
     const quantityNumber = event.target.number.value;
     if (quantityNumber <= product.MOQ) {
-      return alert("Please! input a valid number. You have to purchase a minimum quantity.");
+      return alert(
+        "Please! input a valid number. You have to purchase a minimum quantity."
+      );
     }
-    if (quantityNumber > product.AQ ) {
-      return alert("Please! input a valid number. You can not buy more than available quantity");
+    if (quantityNumber > product.AQ) {
+      return alert(
+        "Please! input a valid number. You can not buy more than available quantity"
+      );
     }
-    
+
     const purchaseOrder = {
       productName: product.name,
       productId: id,
       productQuantity: quantityNumber,
-      customerEmail: user?.email
-    }
+      customerEmail: user?.email,
+    };
 
     // console.log(purchaseOrder)
 
-    fetch('http://localhost:5000/order',{
-      method: 'POST',
+    fetch("https://lit-brook-67654.herokuapp.com/order", {
+      method: "POST",
       headers: {
-        'content-type' : 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(purchaseOrder)
+      body: JSON.stringify(purchaseOrder),
     })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast("Your order has been placed!!");
+      });
 
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      toast("Your order has been placed!!")
-         
-      
-    })
-
-    
-    
     event.target.reset();
   };
 
@@ -90,9 +88,16 @@ const Purchase = () => {
         <div className="ms-4 mt-3 mb-3 pe-4 w-50">
           <h4 className="text-lg font-bold">{product.name}</h4>
           <img className="w-50 mt-2 ps-2 mb-3" src={product.img} alt="" />
-          <h5 className="font-semibold mb-2">Minimum Order Quantity: {product.MOQ}</h5>
-          <h5 className="font-semibold mb-2">Available Quantity: {product.AQ}</h5>
-          <h4 className="text-xl font-semibold my-3">Price: ${product.price}<small className="small"> /Unit</small> </h4>
+          <h5 className="font-semibold mb-2">
+            Minimum Order Quantity: {product.MOQ}
+          </h5>
+          <h5 className="font-semibold mb-2">
+            Available Quantity: {product.AQ}
+          </h5>
+          <h4 className="text-xl font-semibold my-3">
+            Price: ${product.price}
+            <small className="small"> /Unit</small>{" "}
+          </h4>
           <h6>product Id: {id}</h6>
         </div>
 
@@ -100,10 +105,12 @@ const Purchase = () => {
 
         <div className="me-4 mt-3 pt-5 justify-content-center align-items-center ">
           <br />
-          
+
           <div className="update-product-form mb-5">
             <form className="" onSubmit={handlePurchaseOrder}>
-              <h5 className="mb-3 font-bold text-center text-green-700">Input Order Details</h5>
+              <h5 className="mb-3 font-bold text-center text-green-700">
+                Input Order Details
+              </h5>
               <input
                 className="mb-2 mt-2 input input-bordered w-100 font-bold text-xs "
                 disabled
@@ -126,7 +133,7 @@ const Purchase = () => {
                 type="number"
                 name="number"
               />
-              
+
               <input
                 className="mb-2 mt-2 input input-bordered w-100"
                 disabled
@@ -134,7 +141,7 @@ const Purchase = () => {
                 type="email"
                 name="email"
               />
-              
+
               <br />
               <input
                 className="mb-2 mt-2  px-5 update-quantity-btn w-100"
@@ -145,8 +152,6 @@ const Purchase = () => {
           </div>
         </div>
       </div>
-
-      
     </div>
   );
 };
