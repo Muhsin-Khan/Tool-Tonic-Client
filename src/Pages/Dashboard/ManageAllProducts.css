@@ -1,0 +1,51 @@
+.add-product-button{
+    background-color: rgb(2, 145, 2);
+    border-radius: 7px;
+    font-size: large;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 5px;
+    
+    border: 0;
+    
+    height: 50px;
+    color: white;
+    
+    padding: 10px 40px;
+    
+}
+.manage-product{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.manage-product-child{
+    border: 1px solid deepskyblue;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+}
+.delete-product-button{
+    position: sticky;
+    top: 100%;
+    border-radius: 5px;
+    border: 0;
+    height: 40px;
+    color: white;
+    font-weight: 500;
+    font-size: medium;
+    padding: 5px 20px;
+}
+
+@media only screen and (max-width: 576px) {
+    .manage-product{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); 
+    }
+    
+}
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .manage-product{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}

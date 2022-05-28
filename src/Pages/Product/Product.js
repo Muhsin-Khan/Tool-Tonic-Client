@@ -12,10 +12,10 @@ const Product = ( props ) => {
         <div className="product-info">
           <h4 className="text-lg font-bold my-3">{name}</h4>
           <p>Description: {description}</p>
-          <h6>Minimum Oreder Quantity: {MOQ} </h6>
-          <h6>Available Quantity: {AQ} </h6>
-          {/* <h6>Supplier: {supplier}</h6> */}
-          <h5>Price: ${price} <small className="text-sm">/Unit</small></h5>
+          <h6 className="mb-2 mt-3 font-semibold">Minimum Oreder Quantity: {MOQ} </h6>
+          <h6 className="mb-2 font-semibold">Available Quantity: {AQ} </h6>
+          
+          <h5 className="font-semibold">Price: ${price} <small className="text-sm">/Unit</small></h5>
           
         </div>
         <Link to={"/purchase/"+_id}>

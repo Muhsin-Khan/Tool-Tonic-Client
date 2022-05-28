@@ -28,13 +28,13 @@ const UserRow = ({ user }) => {
 
       <td>
         {role !== "admin" && (
-          <button onClick={makeAdmin} class="btn btn-xs">
+          <button onClick={makeAdmin} class="btn btn-xs border-0 bg-yellow-500 text-black hover:bg-green-500">
             Make Admin
           </button>
         )}
       </td>
       <td>
-        <button class="btn btn-xs">Remove User</button>
+        <button class="btn btn-xs border-0 bg-red-300 hover:bg-red-400 text-black">Remove User</button>
       </td>
     </tr>
   );
