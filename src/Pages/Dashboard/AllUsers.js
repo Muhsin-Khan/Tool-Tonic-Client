@@ -5,7 +5,9 @@ import UserRow from "./UserRow";
 
 const AllUsers = () => {
   const { data: users, isLoading } = useQuery("users", () =>
-    fetch("http://localhost:5000/user").then((res) => res.json())
+    fetch("https://lit-brook-67654.herokuapp.com/user").then((res) =>
+      res.json()
+    )
   );
   if (isLoading) {
     return <Loading></Loading>;
@@ -26,7 +28,7 @@ const AllUsers = () => {
           </thead>
           <tbody>
             {users.map((user, index) => (
-              <UserRow index={index+1} key={user._id} user={user}></UserRow>
+              <UserRow index={index + 1} key={user._id} user={user}></UserRow>
             ))}
           </tbody>
         </table>

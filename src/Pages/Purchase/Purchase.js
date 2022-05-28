@@ -11,7 +11,7 @@ const Purchase = () => {
   const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://lit-brook-67654.herokuapp.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
@@ -25,7 +25,7 @@ const Purchase = () => {
     }
     const newQuantity = { quaNtity };
 
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://lit-brook-67654.herokuapp.com/product/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -64,7 +64,7 @@ const Purchase = () => {
 
     // console.log(purchaseOrder)
 
-    fetch("http://localhost:5000/order", {
+    fetch("https://lit-brook-67654.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

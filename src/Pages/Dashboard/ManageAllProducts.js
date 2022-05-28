@@ -11,7 +11,7 @@ const ManageAllProducts = () => {
       "Are you sure you want to delete the product?"
     );
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://lit-brook-67654.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -26,7 +26,9 @@ const ManageAllProducts = () => {
 
   return (
     <div className="container">
-      <h2 className="mb-3 mt-4 text-center text-xl font-bold">Manage Products</h2>
+      <h2 className="mb-3 mt-4 text-center text-xl font-bold">
+        Manage Products
+      </h2>
       <div className="d-flex justify-content-center align-items-center">
         <Link to="/dashboard/addaproduct">
           <button className="add-product-button">Add New Product</button>

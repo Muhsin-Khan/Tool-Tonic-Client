@@ -8,7 +8,9 @@ const MyOrders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/order?customerEmail=${user.email}`)
+      fetch(
+        `https://lit-brook-67654.herokuapp.com/order?customerEmail=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => setOrder(data));
     }
@@ -37,11 +39,20 @@ const MyOrders = () => {
                 <th>{index + 1}</th>
                 <td className="text-xs font-bold">{order.productName}</td>
                 {/* <td className="text-xs">{o.productId}</td> */}
-                <td className=" text-center text-bold ">{order.productQuantity}</td>
+                <td className=" text-center text-bold ">
+                  {order.productQuantity}
+                </td>
                 <td>{order.customerEmail}</td>
-                <td><button class="btn btn-xs border-0 bg-yellow-500 text-black hover:bg-green-500">Pay</button></td>
-                <td><button class="btn btn-xs border-0 bg-red-300 text-black hover:bg-red-500">Cancel Order</button></td>
-                
+                <td>
+                  <button class="btn btn-xs border-0 bg-yellow-500 text-black hover:bg-green-500">
+                    Pay
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-xs border-0 bg-red-300 text-black hover:bg-red-500">
+                    Cancel Order
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

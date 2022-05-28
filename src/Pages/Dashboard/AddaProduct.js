@@ -4,14 +4,13 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
-
 const AddaProduct = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
-    const url = `http://localhost:5000/product`;
+    const url = `https://lit-brook-67654.herokuapp.com/product`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -57,7 +56,7 @@ const AddaProduct = () => {
           placeholder="Admin's Email"
           type="email"
           setValue={user?.email}
-        //   disabled
+          //   disabled
           {...register("email")}
         />
         <input
@@ -72,7 +71,11 @@ const AddaProduct = () => {
           type="text"
           {...register("img")}
         />
-        <input className="mb-2 btn btn-primary w-full w-full" type="submit" value="Add Product" />
+        <input
+          className="mb-2 btn btn-primary w-full w-full"
+          type="submit"
+          value="Add Product"
+        />
       </form>
     </div>
   );
