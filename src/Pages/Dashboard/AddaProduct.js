@@ -28,7 +28,7 @@ const AddaProduct = () => {
   console.log(user);
   return (
     <div className="w-50 mx-auto">
-      <h4 className="text-center p-3">Add New Items</h4>
+      <h4 className="text-center p-3 font-bold">Add New Product</h4>
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input
           className="mb-2 input input-bordered input-primary w-full"

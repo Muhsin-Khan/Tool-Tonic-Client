@@ -21,6 +21,8 @@ import AllUsers from "./Pages/Dashboard/AllUsers";
 import RequireAdmin from "./Pages/Shared/Loading/RequireAdmin";
 import AddaProduct from "./Pages/Dashboard/AddaProduct";
 import ManageAllProducts from "./Pages/Dashboard/ManageAllProducts";
+import ManageOrders from "./Pages/Dashboard/ManageOrders";
+import AllReview from "./Pages/Dashboard/AllReview";
 
 function App() {
   return (
@@ -54,12 +56,15 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<MyOrders></MyOrders>} />
+          <Route index  element={<MyProfile></MyProfile>} />
           <Route path="myprofile" element={<MyProfile></MyProfile>} />
+          <Route path="myorders" element={<MyOrders></MyOrders>} />
           <Route path="addareview" element={<AddaReview></AddaReview>} />
           <Route path="allusers" element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>} />
           <Route path="addaproduct" element={<RequireAdmin><AddaProduct></AddaProduct></RequireAdmin>} />
-          <Route path="manageallproducts" element={<RequireAdmin><ManageAllProducts></ManageAllProducts></RequireAdmin>} />
+          <Route path="manageproducts" element={<RequireAdmin><ManageAllProducts></ManageAllProducts></RequireAdmin>} />
+          <Route path="manageorders" element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>} />
+          
           
         </Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>

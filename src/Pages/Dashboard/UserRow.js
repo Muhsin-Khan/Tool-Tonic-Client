@@ -1,8 +1,8 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-const UserRow = ({ user }) => {
-  const { email, role, index } = user;
+const UserRow = ({ user,index }) => {
+  const { email, role} = user;
   const makeAdmin = () => {
     fetch(`http://localhost:5000/user/admin/${email}`, {
       method: "PUT",
@@ -23,7 +23,7 @@ const UserRow = ({ user }) => {
   };
   return (
     <tr>
-      <th>{1}</th>
+      <th>{index}</th>
       <td>{email}</td>
 
       <td>

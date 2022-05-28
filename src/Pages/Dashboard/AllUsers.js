@@ -25,8 +25,8 @@ const AllUsers = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
-              <UserRow key={user._id} user={user}></UserRow>
+            {users.map((user, index) => (
+              <UserRow index={index+1} key={user._id} user={user}></UserRow>
             ))}
           </tbody>
         </table>

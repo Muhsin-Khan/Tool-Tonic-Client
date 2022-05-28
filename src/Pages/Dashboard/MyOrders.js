@@ -3,20 +3,20 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const MyOrders = () => {
-  const [orders, setOrders] = useState([]);
+  const [order, setOrder] = useState([]);
   const [user] = useAuthState(auth);
 
   useEffect(() => {
     if (user) {
       fetch(`http://localhost:5000/order?customerEmail=${user.email}`)
         .then((res) => res.json())
-        .then((data) => setOrders(data));
+        .then((data) => setOrder(data));
     }
   }, [user]);
   return (
     <div>
       <h1 className="text-lg text-center my-3 font-semibold">
-        My Total Orders : {orders.length}
+        My Total Orders : {order.length}
       </h1>
       <div class="overflow-x-auto">
         <table class="table w-full">
@@ -32,14 +32,15 @@ const MyOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {orders.map((o, index) => (
+            {order.map((order, index) => (
               <tr>
                 <th>{index + 1}</th>
-                <td className="text-xs font-bold">{o.productName}</td>
+                <td className="text-xs font-bold">{order.productName}</td>
                 {/* <td className="text-xs">{o.productId}</td> */}
-                <td className=" text-center text-bold ">{o.productQuantity}</td>
-                <td>{o.customerEmail}</td>
+                <td className=" text-center text-bold ">{order.productQuantity}</td>
+                <td>{order.customerEmail}</td>
                 <td><button class="btn btn-xs border-0 bg-yellow-500 text-black hover:bg-green-500">Pay</button></td>
+                <td><button class="btn btn-xs border-0 bg-red-300 text-black hover:bg-red-500">Cancel Order</button></td>
                 
               </tr>
             ))}
