@@ -34,6 +34,14 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route
+          path="/purchase/:id"
+          element={
+            <RequireAuth>
+              <Purchase></Purchase>
+            </RequireAuth>
+          }
+        ></Route>
         {/* Nestde Routes */}
         <Route
           path="/dashboard"
@@ -52,7 +60,7 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
-        <Route path="/purchase/:id" element={<Purchase></Purchase>}></Route>
+        {/* <Route path="/purchase/:id" element={<Purchase></Purchase>}></Route> */}
         <Route
           path="/myportfolio"
           element={<MyPortfolio></MyPortfolio>}
