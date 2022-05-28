@@ -16,7 +16,8 @@ const SignUp = () => {
    
     const [updateProfile, updating, error] = useUpdateProfile(auth);
 
-  const [token] = useToken(user);
+  // const [token] = useToken(user);
+  // console.log(user)
 
   const navigate = useNavigate();
 

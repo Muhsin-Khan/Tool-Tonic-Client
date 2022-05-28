@@ -4,20 +4,28 @@ import { toast } from "react-toastify";
 const UserRow = ({ user }) => {
   const { email, role, index } = user;
   const makeAdmin = () => {
-    fetch(`https://lit-brook-67654.herokuapp.com/user/admin/${email}`, {
+    fetch(`http://localhost:5000/user/admin/${email}`, {
       method: "PUT",
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        toast.success(`Admin has been made sucessfully`);
+      .then(res => {
+        if(res.status === 403){
+          toast.error('Failed to Make Admin');
+        }
+        return res.json()})
+      .then(data => {
+        if(data.modifiedCount > 0){
+          console.log(data);
+          toast.success(`Admin has been made sucessfully`);
+          
+        }
+        
       });
   };
   return (
     <tr>
       <th>{1}</th>
       <td>{email}</td>
-      
+
       <td>
         {role !== "admin" && (
           <button onClick={makeAdmin} class="btn btn-xs">
